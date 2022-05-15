@@ -4,7 +4,11 @@ const Bread = require('../models/bread.js')
 
 // INDEX
 router.get('/', (req, res) => {
-  res.send(Bread)
+    res.render('index', {
+        'breads': Bread,
+        title: 'index Page'
+    })
+    // res.send(Bread)
 })
 
 // SHOW
