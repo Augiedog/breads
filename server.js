@@ -9,6 +9,8 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
+app.use(express.static('public'))
+
 // ROUTES
 app.get('/', (req, res) => {
     res.send('Welcome to an Awesome App about Breads')

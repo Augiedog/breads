@@ -11,7 +11,9 @@ function Index({ breads, title } ) {
                 breads.map((bread, index) => {
                     return (
                         <li key={index}>
-                            <a>{bread.name}</a>
+                            <a href={`/breads/${index}`}>
+                                {bread.name}
+                            </a>
                         </li>
                     )
                 })

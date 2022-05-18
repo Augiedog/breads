@@ -13,7 +13,10 @@ router.get('/', (req, res) => {
 
 // SHOW
 router.get('/:arrayIndex', (req, res) => {
-    res.send(Bread[req.params.arrayIndex])
+    const { arrayIndex } = req.params
+    res.render('show', {
+        bread: Bread[arrayIndex]
+    })
 })
   
 module.exports = router
