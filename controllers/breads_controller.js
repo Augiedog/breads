@@ -1,4 +1,5 @@
 const express = require('express')
+const bread = require('../models/bread.js')
 const router = express.Router()
 const Bread = require('../models/bread.js')
 
@@ -28,11 +29,18 @@ router.post('/', (req, res) => {
     res.redirect('/breads')
 })
 
+// Delete bread
+router.delete('/:arrayIndex', (req, res) => {
+    bread.splice(req.params.arrayIndex, 1)
+    res.status(303).redirect('/breads')
+})
+
 // SHOW
 router.get('/:arrayIndex', (req, res) => {
     const { arrayIndex } = req.params
     res.render('show', {
-        bread: Bread[arrayIndex]
+        bread: Bread[arrayIndex],
+        index: arrayIndex
     })
 })
   
