@@ -1,11 +1,11 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Edit({ bread, index }) {
+function Edit({ bread }) {
     return (
         <Default>
             <h2>Edit Page</h2>
-            <form method='POST' action={`/breads/${index}?_method=PUT`}>
+            <form method='POST' action={`/breads/${bread._id}?_method=PUT`}>
                 <label htmlFor='name'>Name</label>
                 <input
                     type="text"
