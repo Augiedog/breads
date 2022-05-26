@@ -6,7 +6,6 @@ const mongoose = require('mongoose')
 const breadsController = require('./controllers/breads_controller.js')
 const methodOverride =require('method-override')
 
-
 // MIDDLEWARE
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
