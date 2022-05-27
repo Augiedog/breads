@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Bread = require('../models/bread.js')
+const oldBread = require('../models/old_bread.js')
 
 // INDEX
 router.get('/', async (req, res) => {
@@ -19,6 +20,17 @@ router.get('/', async (req, res) => {
 router.get('/new', (req, res) => {
     res.render('new')
 })
+
+router.get('/seed', async (req, res) => {
+    try {
+        await Bread.insertMany(oldBread)
+        res.redirect('/breads')
+    } catch (error) {
+        console.log(error)
+        res.send("ERROR")
+    }
+})
+
 // SHOW get bread by index
 router.get('/:id', async (req, res) => {
     try {

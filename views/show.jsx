@@ -2,6 +2,7 @@ const React = require('react')
 const Default = require('./layouts/default')
 
 function Show({ bread }) {
+    const baker = bread.getBakedBy()
     return (
         <Default>
             <h2>Show page</h2>
@@ -11,6 +12,7 @@ function Show({ bread }) {
                 have gluten.
             </p>
             <img src={bread.image} alt={bread.name}></img>
+            <p>{baker}</p>
             <a href={`/breads/${bread._id}/edit`}><button>Edit</button></a>
             <form method='POST' action={`/breads/${bread._id}?_method=DELETE`}>
                 <input type="submit" value="DELETE" />
