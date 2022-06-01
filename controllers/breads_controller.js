@@ -4,7 +4,7 @@ const router = express.Router()
 const Bread = require('../models/bread.js')
 const oldBread = require('../models/old_bread.js')
 
-// INDEX
+// INDEX landing page
 router.get('/', async (req, res) => {
     try {
         const bread = await Bread.find()
@@ -17,10 +17,13 @@ router.get('/', async (req, res) => {
         res.send('ERROR')
     }    
 })
+
+// Breads/new Add new page
 router.get('/new', (req, res) => {
     res.render('new')
 })
 
+// Seeds data base
 router.get('/seed', async (req, res) => {
     try {
         await Bread.insertMany(oldBread)
@@ -31,7 +34,7 @@ router.get('/seed', async (req, res) => {
     }
 })
 
-// SHOW get bread by index
+// SHOW page get bread by index
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params

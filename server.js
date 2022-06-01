@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const breadsController = require('./controllers/breads_controller.js')
+const bakerController = require('./controllers/baker_controller.js')
 const methodOverride =require('method-override')
 
 // MIDDLEWARE
@@ -17,9 +18,13 @@ app.use(express.urlencoded({extended: true}))
 
 
 app.use('/breads', breadsController)
+app.use('/baker', bakerController)
 // ROUTES
 app.get('/', (req, res) => {
     res.send('Welcome to an Awesome App about Breads')
+})
+app.get('*', (req, res) => {
+  res.send('404 くコ：彡 ') 
 })
 
 // db connection

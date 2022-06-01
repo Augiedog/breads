@@ -7,7 +7,7 @@ function Index({ breads, title } ) {
         <Default title={title}>
         <h2>Index Page</h2>
         <div className='newBttn'>
-            <a href='/breads/new'><button>Add new bread</button></a>
+            <a href='/breads/new'><button>Add bread</button></a>
         </div>
         <ul>
             {
