@@ -4,7 +4,8 @@ const { Schema } = mongoose
 const bakerSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Phoebe']
     },
     startDate: {
         type: Date,

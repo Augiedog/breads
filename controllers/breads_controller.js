@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const Bread = require('../models/bread.js')
+const Baker = require('../models/bakers.js')
 const oldBread = require('../models/old_bread.js')
 
 // INDEX landing page
@@ -20,7 +21,13 @@ router.get('/', async (req, res) => {
 
 // Breads/new Add new page
 router.get('/new', (req, res) => {
-    res.render('new')
+    Baker.find()
+        .then(foundBakers => {
+            res.render('new', {
+                bakers: foundBakers
+            })
+        })
+    
 })
 
 // Seeds data base
