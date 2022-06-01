@@ -4,6 +4,7 @@ const router = express.Router()
 const Bread = require('../models/bread.js')
 const Baker = require('../models/bakers.js')
 const oldBread = require('../models/old_bread.js')
+const { populate } = require('../models/bread.js')
 
 // INDEX landing page
 router.get('/', async (req, res) => {
@@ -46,8 +47,13 @@ router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params
         const bread = await Bread.findById(id)
-        res.render('show', {
-        bread
+        // Right here is the problem
+        id.populate('Baker')
+        id.then(foundBread => {
+            res.render('show', {
+            bread: foundBread
+        })
+        
     })
     } catch (error) {
         console.log(error)
