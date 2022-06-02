@@ -12,6 +12,15 @@ const bakerSchema = new Schema({
         required: true
     },
     bio: String
+},{
+    toJSON: { virtuals: true }
+})
+
+// virtuals
+bakerSchema.virtual('breads', {
+    ref: 'Bread',
+    localField: 'id',
+    foreignField: 'baker'
 })
 
 const Baker = mongoose.model('Baker', bakerSchema)

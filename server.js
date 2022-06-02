@@ -21,7 +21,8 @@ app.use('/breads', breadsController)
 app.use('/baker', bakerController)
 // ROUTES
 app.get('/', (req, res) => {
-    res.send('Welcome to an Awesome App about Breads')
+    res.redirect('/breads')
+    //res.send('Welcome to an Awesome App about Breads')
 })
 app.get('*', (req, res) => {
   res.send('404 くコ：彡 ') 
@@ -29,7 +30,7 @@ app.get('*', (req, res) => {
 
 // db connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => console.log('DB connected'))
+    .then(() => console.log('You have connected to the DB'))
     .catch(err => console.error(err));
 
 // LISTEN

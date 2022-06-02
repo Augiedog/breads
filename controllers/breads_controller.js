@@ -10,8 +10,10 @@ const { populate } = require('../models/bread.js')
 router.get('/', async (req, res) => {
     try {
         const bread = await Bread.find()
+        const baker = await Baker.find()
         res.render('index', {
             breads: bread,
+            bakers: baker,
             title: 'Bread'
         })
     } catch (error) {
@@ -48,8 +50,8 @@ router.get('/:id', async (req, res) => {
         const { id } = req.params
         const bread = await Bread.findById(id)
         // Right here is the problem
-        id.populate('Baker')
-        id.then(foundBread => {
+        //id.populate('Baker')
+        .then(foundBread => {
             res.render('show', {
             bread: foundBread
         })
