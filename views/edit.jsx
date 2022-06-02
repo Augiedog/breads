@@ -31,7 +31,7 @@ function Edit({ bread, bakers }) {
                  <br />
                 <label htmlFor="baker">Baker</label>
                 <select name="baker" id="baker">
-                {   // Error with map
+                {  
                     bakers.map((Baker) => {
                         return (
                             <option value={Baker.id} key={Baker.id}>{Baker.name}</option>
