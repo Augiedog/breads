@@ -21,6 +21,7 @@ function Index({ breads, title, bakers } ) {
                 })
             }
         </ul>
+        <div>
         <h3>Breads</h3>
         <ul>
             {
@@ -35,6 +36,7 @@ function Index({ breads, title, bakers } ) {
                 })
             }
         </ul>
+        </div>
     </Default>
     )
     

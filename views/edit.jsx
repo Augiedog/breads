@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Edit({ bread }) {
+function Edit({ bread, bakers }) {
     return (
         <Default>
             <h2>Edit Page</h2>
@@ -27,14 +27,17 @@ function Edit({ bread }) {
                     name="hasGluten"
                     id="hasGluten"
                     defaultChecked={bread.hasGluten}
-                 />
+                />
                  <br />
-                 <select name="baker" id="baker">
-                    <option value="Rachel">Rachel</option>
-                    <option value="Monica">Monica</option>
-                    <option value="Joey">Joey</option>
-                    <option value="Chandler">Chandler</option>
-                    <option value="Phoebe">Phoebe</option>
+                <label htmlFor="baker">Baker</label>
+                <select name="baker" id="baker">
+                {   // Error with map
+                    bakers.map((Baker) => {
+                        return (
+                            <option value={Baker.id} key={Baker.id}>{Baker.name}</option>
+                        )
+                    })
+                }
                 </select>
                 <br />
                 <input type="submit" />

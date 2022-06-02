@@ -14,4 +14,17 @@ router.get('/seed', async (req, res) => {
     }
 })
 
+router.get('/', async (req, res) => {
+    let bakers = await Baker.find().populate('breads')
+    res.send(bakers)
+})
+
+router.get('/:id', async (req, res) => {
+    const { id } = req.params
+    let baker = await Baker.findById(id)
+    res.render('baker', {
+        baker
+    })
+})
+
 module.exports = router

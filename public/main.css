@@ -1,11 +1,16 @@
 body {
-    background-color: floralwhite;
-  }
+  background-color: floralwhite;
+  display: flex;
+  flex-direction: column;
+}
   
-  img {
-    width: 50%;
-    display: block;
-    margin: auto;
-  }
-  
+img {
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+/* div {
+  display: flex;
+  flex-wrap: wrap;
+} */
   
