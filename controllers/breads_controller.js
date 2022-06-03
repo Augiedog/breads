@@ -50,7 +50,7 @@ router.get('/:id', async (req, res) => {
         const { id } = req.params
         const bread = await Bread.findById(id)
         // Right here is the problem
-        .populate('Baker')
+        .populate('baker')
         .then(foundBread => {
             res.render('show', {
             bread: foundBread
@@ -98,9 +98,11 @@ router.delete('/:id', async (req, res) => {
 // Get edit page
 router.get('/:id/edit', async (req, res) => {
     const { id } = req.params
-    const bread = await Bread.findById(id)
+    const bread = await Bread.findById(id).populate('baker')
+    const bakers = await Baker.find()
     res.render('edit', {
-      bread
+      bread,
+      bakers
     })
 })
 

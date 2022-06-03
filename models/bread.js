@@ -20,7 +20,7 @@ const breadSchema = new mongoose.Schema({
 })
 
 breadSchema.methods.getBakedBy = function() {
-  return `${this.name} was baked with love by ${this.baker}.`
+  return `${this.name} was baked with love by ${this.baker.name}.`
 }
 
 module.exports = mongoose.model('Bread', breadSchema)

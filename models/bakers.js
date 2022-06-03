@@ -5,7 +5,7 @@ const bakerSchema = new Schema({
     name: {
         type: String,
         required: true,
-        enum: ['Rachel', 'Monica', 'Joey', 'Chandler', 'Phoebe']
+        enum: ['Rachel', 'Monica', 'Joey', 'Ross', 'Chandler', 'Phoebe']
     },
     startDate: {
         type: Date,
@@ -19,7 +19,7 @@ const bakerSchema = new Schema({
 // virtuals
 bakerSchema.virtual('breads', {
     ref: 'Bread',
-    localField: 'id',
+    localField: '_id',
     foreignField: 'baker'
 })
 

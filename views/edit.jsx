@@ -30,7 +30,7 @@ function Edit({ bread, bakers }) {
                 />
                  <br />
                 <label htmlFor="baker">Baker</label>
-                <select name="baker" id="baker">
+                <select name="baker" id="baker" defaultValue={bread.baker._id}>
                 {  
                     bakers.map((Baker) => {
                         return (
