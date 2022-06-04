@@ -49,7 +49,6 @@ router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params
         const bread = await Bread.findById(id)
-        // Right here is the problem
         .populate('baker')
         .then(foundBread => {
             res.render('show', {
