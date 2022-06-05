@@ -4,7 +4,7 @@ const Default = require('./layouts/Default')
 
 function New ({ bakers }) {
     return (
-      <Default>
+      <Default title="New Bread">
         <h2>Add a new bread</h2>
         <form action='/breads' method='post'>
           <label htmlFor="name">Name</label>
