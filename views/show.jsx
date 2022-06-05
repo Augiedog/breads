@@ -4,7 +4,7 @@ const Default = require('./layouts/default')
 function Show({ bread }) {
     const baker = bread.getBakedBy()
     return (
-        <Default>
+        <Default title={bread.name}>
             <h2>Show page</h2>
             <h3>{bread.name}</h3>
             <p>
