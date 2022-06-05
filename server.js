@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     //res.send('Welcome to an Awesome App about Breads')
 })
 app.get('*', (req, res) => {
-  res.send('404 くコ：彡 ') 
+  res.render('error') 
 })
 
 // db connection
