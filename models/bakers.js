@@ -23,5 +23,5 @@ bakerSchema.virtual('breads', {
     foreignField: 'baker'
 })
 
-const Baker = mongoose.model('Baker', bakerSchema)
-module.exports = Baker
+ 
+module.exports = mongoose.model('Baker', bakerSchema)

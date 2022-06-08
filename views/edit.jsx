@@ -32,9 +32,9 @@ function Edit({ bread, bakers }) {
                 <label htmlFor="baker">Baker</label>
                 <select name="baker" id="baker" defaultValue={bread.baker._id}>
                 {  
-                    bakers.map((Baker) => {
+                    bakers.map((baker) => {
                         return (
-                            <option value={Baker.id} key={Baker.id}>{Baker.name}</option>
+                            <option value={baker.id} key={baker.id}>{baker.name}</option>
                         )
                     })
                 }

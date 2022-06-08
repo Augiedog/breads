@@ -1,6 +1,6 @@
 const React = require('react')
 const Baker = require('../models/bakers')
-const Default = require('./layouts/Default')
+const Default = require('./layouts/default')
 
 function New ({ bakers }) {
     return (
