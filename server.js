@@ -22,7 +22,7 @@ app.use('/baker', bakerController)
 // ROUTES
 app.get('/', (req, res) => {
     res.render('index')
-    //res.send('Welcome to an Awesome App about Breads')
+    //res.send('Welcome to an Awesome App about Breads.')
 })
 app.get('*', (req, res) => {
   res.render('error') 
