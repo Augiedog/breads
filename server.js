@@ -21,7 +21,7 @@ app.use('/breads', breadsController)
 app.use('/baker', bakerController)
 // ROUTES
 app.get('/', (req, res) => {
-    res.render('index')
+    res.redirect('/breads')
     //res.send('Welcome to an Awesome App about Breads.')
 })
 app.get('*', (req, res) => {

@@ -1,5 +1,4 @@
 const React = require('react')
-const bread = require('../models/bread')
 const Default = require('./layouts/default')
 
 function Index({ breads, title, bakers } ) {
