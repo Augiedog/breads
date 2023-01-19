@@ -34,7 +34,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .catch(err => console.error(err));
 
 // LISTEN
-const PORT = process.env.PORT
-app.listen(PORT, () => {
-  console.log('nomming at port', PORT);
-})
+// const PORT = process.env.PORT
+// app.listen(PORT, () => {
+//   console.log('nomming at port', PORT);
+// })

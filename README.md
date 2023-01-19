@@ -1,4 +1,4 @@
 # Breads
 
-this an app for bread
-See it deployed [Here](https://evening-reef-96010.herokuapp.com/breads)
+this app for bread, has been a fun space where friends have made up images to go with there name. 
+See it deployed [Here](https://fabulous-fairy-ee031f.netlify.app/)

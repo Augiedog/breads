@@ -7,6 +7,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon",
+    "build": "server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
